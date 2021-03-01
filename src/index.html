@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KIJAK | Kinder- und Jugendakademie Schwarzwald-Baar – Förderverein e.V</title>
+
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet/less" type="text/css" href="less/style.less">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+
+    <!-- FONTAWESOME -->
+    <script src="https://kit.fontawesome.com/f6f932622f.js" crossorigin="anonymous"></script>
+
+    <!-- LESS -->
+    <script src="https://cdn.jsdelivr.net/npm/less@3.13"></script>
+
+    <!-- BRYTHON -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.9.1/brython.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.9.1/brython_stdlib.min.js"></script>
+</head>
+
+<body onload="brython()">
+    <!-- NAVBAR -->
+    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-black" id="navbar" style="display: none">
+        <!-- open / close navbar -->
+        <script>
+            function w3_open() {
+                document.getElementById("navbar").style.width = "100%";
+                document.getElementById("navbar").style.display = "block";
+                document.getElementById("open-nav").style.display = "none";
+            }
+
+            function w3_close() {
+                document.getElementById("navbar").style.display = "none";
+                document.getElementById("open-nav").style.display = "inline-block";
+            }
+        </script>
+
+        <button onclick="w3_close()" class="w3-bar-item w3-large">
+            <i class="fas fa-times"></i>
+        </button>
+        <a class="w3-bar-item w3-button w3-mobile" id="nav-title" href="#">
+            <h3><b>KIJAK</b> - Inhalt</h3>
+        </a>
+        <a class="w3-bar-item w3-button w3-mobile" href="#"><i class="fas fa-graduation-cap fa-fw"></i> Hochbegabung</a>
+        <a class="w3-bar-item w3-button w3-mobile" href="#"><i class="fas fa-user-friends   fa-fw"></i> Gemeinsam</a>
+        <a class="w3-bar-item w3-button w3-mobile" href="#"><i class="fas fa-receipt        fa-fw"></i> Förderverein</a>
+        <a class="w3-bar-item w3-button w3-mobile" href="#"><i class="fas fa-map-signs      fa-fw"></i> Kursprogramm</a>
+        <a class="w3-bar-item w3-button w3-mobile" href="#"><i class="fas fa-address-card   fa-fw"></i> Mitgliedschaft</a>
+        <a class="w3-bar-item w3-button w3-mobile" href="#"><i class="fas fa-hands-helping  fa-fw"></i> Partner</a>
+        <a class="w3-bar-item w3-button w3-mobile" href="#"><i class="fas fa-at             fa-fw"></i> Kontakt / Impressum</a>
+        <a class="w3-bar-item w3-button w3-mobile" href="#"><i class="fas fa-database       fa-fw"></i> Datenschutz / Haftung</a>
+    </div>
+
+    <!-- CONTENT -->
+    <!-- burger menu -->
+    <div>
+        <button class="w3-button w3-xlarge block" onclick="w3_open()" id="open-nav">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+
+    <!-- heading -->
+    <div class="w3-container" id="heading">
+        <h1>KIJAK</h1>
+    </div>
+</body>
+
+</html>

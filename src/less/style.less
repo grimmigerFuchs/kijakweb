@@ -1,0 +1,43 @@
+// styles.less
+@import "colors.less";
+
+body,
+html {
+    scroll-behavior: smooth;
+    font-family: "Rubik", sans-serif;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+.block {
+    display: block;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+}
+
+#navbar {
+    box-shadow: 5px 0 25px fade(@dark, 45%);
+    background-color: @dark !important;
+
+    #nav-title:hover {
+        background-color: Transparent !important;
+    }
+
+    a:hover {
+        color: white !important;
+        background-color: @middle !important;
+    }
+}
+
+#heading {
+    background-color: @dark;
+}
