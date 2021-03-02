@@ -7,7 +7,7 @@ function navbar_open() {
     adjustNavbar();
     document.getElementById("navbar").style.display         = "block";
     document.getElementById("open-nav-icon").style.opacity  = "0"
-}
+};
 
 /**
  * Closes the navbar
@@ -18,7 +18,7 @@ function navbar_close() {
     document.getElementById("open-nav-icon").style.opacity  = "100%"
     document.getElementById("main").style.width             = "100%";
     document.getElementById("main").style.marginLeft        = "0";
-}
+};
 
 /**
  * Adjusts suitable navbar size
@@ -32,7 +32,7 @@ function adjustNavbar() {
         document.getElementById("main").style.width         = strOppNavbarWidth;
         document.getElementById("main").style.marginLeft    = strNavbarwidth;
     }
-}
+};
 
 // navbar width
 var navbarWidth         = 25,
