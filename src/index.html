@@ -28,22 +28,41 @@
         <!-- open / close navbar -->
         <script>
             function w3_open() {
-                document.getElementById("navbar").style.width = "100%";
+                adjustNavbar()
                 document.getElementById("navbar").style.display = "block";
-                document.getElementById("open-nav").style.display = "none";
+                document.getElementById("open-nav").style.opacity = "0";
+                document.getElementById("main").style.width = strOppNavbarWidth;
+                document.getElementById("main").style.marginLeft = strNavbarwidth;
             }
 
             function w3_close() {
                 document.getElementById("navbar").style.display = "none";
-                document.getElementById("open-nav").style.display = "inline-block";
+                document.getElementById("main").style.width = "100%";
+                document.getElementById("main").style.marginLeft= "0";
+                document.getElementById("open-nav").style.opacity = "100%";
             }
+
+            function adjustNavbar() {
+                if (media.matches) {
+                    document.getElementById("navbar").style.width = "100%";
+                } else {
+                    document.getElementById("navbar").style.width = strNavbarwidth;
+                }
+            }
+
+            var navbarWidth = 30;
+            var strNavbarwidth = navbarWidth.toString() + "%";
+            var strOppNavbarWidth = (100 - navbarWidth).toString() + "%";
+
+            var media = window.matchMedia("(max-width: 700px)");
+            media.addListener(adjustNavbar);
         </script>
 
         <button onclick="w3_close()" class="w3-bar-item w3-large">
             <i class="fas fa-times"></i>
         </button>
         <a class="w3-bar-item w3-button w3-mobile" id="nav-title" href="#">
-            <h3><b>KIJAK</b> - Inhalt</h3>
+            <h3><b>Inhalt</b></h3>
         </a>
         <a class="w3-bar-item w3-button w3-mobile" href="#"><i class="fas fa-graduation-cap fa-fw"></i> Hochbegabung</a>
         <a class="w3-bar-item w3-button w3-mobile" href="#"><i class="fas fa-user-friends   fa-fw"></i> Gemeinsam</a>
@@ -56,16 +75,18 @@
     </div>
 
     <!-- CONTENT -->
-    <!-- burger menu -->
-    <div>
-        <button class="w3-button w3-xlarge block" onclick="w3_open()" style="color: black">
-            <i class="fas fa-bars"></i>
-        </button>
-    </div>
+    <div id="main">
+        <!-- burger menu button -->
+        <div>
+            <button class="w3-button w3-xlarge block" id="open-nav" onclick="w3_open()" style="color: black">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
 
-    <!-- heading -->
-    <div class="w3-container" id="heading">
-        <h1>KIJAK</h1>
+        <!-- heading -->
+        <div class="w3-container" id="heading">
+            <h1>KIJAK</h1>
+        </div>
     </div>
 </body>
 
