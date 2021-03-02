@@ -1,3 +1,5 @@
+// navbar.js
+
 function w3_open() {
     adjustNavbar()
     document.getElementById("navbar").style.display = "block";
