@@ -16,5 +16,14 @@
   "bugs": {
     "url": "https://github.com/grimmigerFuchs/KIJAK-website/issues"
   },
-  "homepage": "https://github.com/grimmigerFuchs/KIJAK-website#readme"
+  "homepage": "https://github.com/grimmigerFuchs/KIJAK-website#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.2",
+    "express": "^4.17.1",
+    "w3-css": "^4.1.0"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-less": "^4.0.1"
+  }
 }
