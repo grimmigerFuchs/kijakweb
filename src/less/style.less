@@ -9,6 +9,10 @@ html {
     color: white;
 }
 
+h1 {
+    font-size: 6.3vw;
+}
+
 a {
     text-decoration: none;
 }
@@ -19,10 +23,24 @@ button {
 
 .block {
     display: block;
-    width: 100%;
+    width: 100vw !important;
     border: none;
     outline: none;
     text-align: left;
+}
+
+#open-nav-parent {
+    position: fixed;
+    background-color: white;
+
+    &:hover {
+        background-color: #efefef;
+    }
+
+    #open-nav {
+        display: flex;
+        background-color: Transparent !important;
+    }
 }
 
 #navbar {
@@ -32,6 +50,14 @@ button {
     // box-shadow: 5px 0 25px fade(@dark, 45%);
     position: fixed;
     background-color: @dark !important;
+
+    #close-nav {
+        background-color: white;
+
+        &:hover {
+            background-color: #efefef;
+        }
+    }
 
     #nav-title:hover {
         background-color: Transparent !important;
@@ -44,7 +70,11 @@ button {
 }
 
 #heading {
-    width: 100vw;
-    height: 100vh;
+    height: 300vh;
     background-color: @dark;
+    text-align: center;
+
+    h1 {
+        margin-top: 6vh;
+    }
 }

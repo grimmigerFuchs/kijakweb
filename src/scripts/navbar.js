@@ -1,22 +1,22 @@
 function w3_open() {
     adjustNavbar()
     document.getElementById("navbar").style.display = "block";
-    document.getElementById("open-nav").style.opacity = "0";
+    document.getElementById("open-nav").style.display = "none";
 }
 
 function w3_close() {
     document.getElementById("navbar").style.display = "none";
+    document.getElementById("open-nav").style.display = "flex";
     document.getElementById("main").style.width = "100%";
-    document.getElementById("main").style.marginLeft= "0";
-    document.getElementById("open-nav").style.opacity = "100%";
+    document.getElementById("main").style.marginLeft = "0";
 }
 
 function adjustNavbar() {
     if (media.matches) {
         document.getElementById("navbar").style.width = "100%";
     } else {
-        document.getElementById("main").style.width = strOppNavbarWidth;
         document.getElementById("navbar").style.width = strNavbarwidth;
+        document.getElementById("main").style.width = strOppNavbarWidth;
         document.getElementById("main").style.marginLeft = strNavbarwidth;
     }
 }

@@ -26,11 +26,10 @@
     <!-- NAVBAR -->
     <div class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-black" id="navbar" style="display: none">
         <!-- open / close navbar -->
-        <script type="text/javascript" src="scripts/navbar.js">
-        </script>
+        <script type="text/javascript" src="scripts/navbar.js"></script>
 
-        <button onclick="w3_close()" class="w3-bar-item w3-large">
-            <i class="fas fa-times" style="margin-left: .5vw"></i>
+        <button onclick="w3_close()" class="w3-bar-item w3-large" id="close-nav">
+            <i class="fas fa-times" style="margin-left: .5"></i>
         </button>
         <a class="w3-bar-item w3-button w3-mobile" id="nav-title" href="#">
             <h3><b>Inhalt</b></h3>
@@ -49,7 +48,7 @@
     <!-- CONTENT -->
     <div id="main">
         <!-- burger menu button -->
-        <div>
+        <div id="open-nav-parent">
             <button class="w3-button w3-xlarge block" id="open-nav" onclick="w3_open()" style="color: black">
                 <i class="fas fa-bars"></i>
             </button>
