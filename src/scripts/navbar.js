@@ -2,8 +2,6 @@ function w3_open() {
     adjustNavbar()
     document.getElementById("navbar").style.display = "block";
     document.getElementById("open-nav").style.opacity = "0";
-    document.getElementById("main").style.width = strOppNavbarWidth;
-    document.getElementById("main").style.marginLeft = strNavbarwidth;
 }
 
 function w3_close() {
@@ -17,7 +15,9 @@ function adjustNavbar() {
     if (media.matches) {
         document.getElementById("navbar").style.width = "100%";
     } else {
+        document.getElementById("main").style.width = strOppNavbarWidth;
         document.getElementById("navbar").style.width = strNavbarwidth;
+        document.getElementById("main").style.marginLeft = strNavbarwidth;
     }
 }
 
