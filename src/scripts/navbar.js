@@ -27,5 +27,5 @@ var navbarWidth = 25;
 var strNavbarwidth = navbarWidth.toString() + "%";
 var strOppNavbarWidth = (100 - navbarWidth).toString() + "%";
 
-var media = window.matchMedia("(max-width: 950px)");
+var media = window.matchMedia("(max-width: 1024px)");
 media.addListener(adjustNavbar);
