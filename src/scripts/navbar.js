@@ -3,7 +3,7 @@
 /**
  * Opens the navbar
  */
-function w3_open() {
+function navbar_open() {
     adjustNavbar();
     document.getElementById("navbar").style.display         = "block";
     document.getElementById("open-nav-icon").style.opacity  = "0"
@@ -12,7 +12,7 @@ function w3_open() {
 /**
  * Closes the navbar
  */
-function w3_close() {
+function navbar_close() {
     document.getElementById("navbar").style.display         = "none";
     document.getElementById("open-nav").style.display       = "flex";
     document.getElementById("open-nav-icon").style.opacity  = "100%"
@@ -43,5 +43,5 @@ var navbarWidth         = 25,
 var media = window.matchMedia("(max-width: 1024px)");
 media.addListener(function() {
     adjustNavbar();
-    w3_close();
+    navbar_close();
 });
