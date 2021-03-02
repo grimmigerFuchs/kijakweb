@@ -19,7 +19,6 @@
   "homepage": "https://github.com/grimmigerFuchs/KIJAK-website#readme",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.2",
-    "express": "^4.17.1",
     "w3-css": "^4.1.0"
   },
   "devDependencies": {
