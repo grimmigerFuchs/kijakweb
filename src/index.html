@@ -30,7 +30,7 @@
         <!-- open / close navbar -->
         <script type="text/javascript" src="scripts/navbar.js"></script>
 
-        <button onclick="w3_close()" class="w3-bar-item w3-large" id="close-nav">
+        <button onclick="navbar_close()" class="w3-bar-item w3-large" id="close-nav">
             <i class="fas fa-times fa-fw" style="margin-left: .5"></i>
         </button>
         <a class="w3-button w3-mobile" id="nav-title" href="#">
@@ -38,7 +38,7 @@
         </a>
         <!-- navbar items -->
         <!-- TODO: Close navbar if on mobile and item clicked -->
-        <a class="w3-bar-item w3-button w3-mobile" href="#"><i class="fas fa-graduation-cap fa-fw"></i> Hochbegabung</a>
+        <a class="w3-bar-item w3-button w3-mobile" href="#hochbegabung"><i class="fas fa-graduation-cap fa-fw"></i> Hochbegabung</a>
         <a class="w3-bar-item w3-button w3-mobile" href="#"><i class="fas fa-user-friends   fa-fw"></i> Gemeinsam</a>
         <a class="w3-bar-item w3-button w3-mobile" href="#"><i class="fas fa-map-signs      fa-fw"></i> Kursprogramme</a>
         <a class="w3-bar-item w3-button w3-mobile" href="#"><i class="fas fa-receipt        fa-fw"></i> Förderverein</a>
@@ -52,8 +52,8 @@
     <div id="main">
         <!-- burger menu button -->
         <div id="open-nav-parent">
-            <button class="w3-button w3-xlarge block" id="open-nav" onclick="w3_open()" style="color: black">
-                <i class="fas fa-bars fa-fw"></i>
+            <button class="w3-button w3-xlarge block" id="open-nav" onclick="navbar_open()" style="color: black">
+                <i class="fas fa-bars fa-fw" id="open-nav-icon"></i>
             </button>
         </div>
 
@@ -64,6 +64,12 @@
                 <h1>KIJAK</h1>
                 <h2>Kinder- und Jugendakademie Schwarzwald-Baar</h2>
             </div>
+        </div>
+
+        <!-- Hochbegabung -->
+        <div class="w3-container section" id="hochbegabung">
+            <h3>Hochbegabt?! - Wir fördern ihr Kind!</h3>
+            <hr>
         </div>
     </div>
 </body>
