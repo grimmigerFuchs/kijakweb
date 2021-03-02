@@ -24,6 +24,7 @@ function w3_close() {
  * Is called whenever the navbar is opened or the screen size is changed from "mobile" to "desktop"
  */
 function adjustNavbar() {
+    w3_close()
     if (media.matches) {
         document.getElementById("navbar").style.width = "100%";
     } else {
