@@ -4,7 +4,7 @@
  * Opens the navbar
  */
 function w3_open() {
-    adjustNavbar()
+    adjustNavbar();
     document.getElementById("navbar").style.display         = "block";
     document.getElementById("open-nav-icon").style.opacity  = "0"
 }
@@ -25,7 +25,6 @@ function w3_close() {
  * Is called whenever the navbar is opened or the screen size is changed from "mobile" to "desktop"
  */
 function adjustNavbar() {
-    w3_close()
     if (media.matches) {
         document.getElementById("navbar").style.width = "100%";
     } else {
@@ -42,4 +41,7 @@ var navbarWidth         = 25,
 
 // change of screen size detection -> "mobile" / "desktop"
 var media = window.matchMedia("(max-width: 1024px)");
-media.addListener(adjustNavbar);
+media.addListener(function() {
+    adjustNavbar();
+    w3_close();
+});
