@@ -26,36 +26,7 @@
     <!-- NAVBAR -->
     <div class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-black" id="navbar" style="display: none">
         <!-- open / close navbar -->
-        <script>
-            function w3_open() {
-                adjustNavbar()
-                document.getElementById("navbar").style.display = "block";
-                document.getElementById("open-nav").style.opacity = "0";
-                document.getElementById("main").style.width = strOppNavbarWidth;
-                document.getElementById("main").style.marginLeft = strNavbarwidth;
-            }
-
-            function w3_close() {
-                document.getElementById("navbar").style.display = "none";
-                document.getElementById("main").style.width = "100%";
-                document.getElementById("main").style.marginLeft= "0";
-                document.getElementById("open-nav").style.opacity = "100%";
-            }
-
-            function adjustNavbar() {
-                if (media.matches) {
-                    document.getElementById("navbar").style.width = "100%";
-                } else {
-                    document.getElementById("navbar").style.width = strNavbarwidth;
-                }
-            }
-
-            var navbarWidth = 30;
-            var strNavbarwidth = navbarWidth.toString() + "%";
-            var strOppNavbarWidth = (100 - navbarWidth).toString() + "%";
-
-            var media = window.matchMedia("(max-width: 700px)");
-            media.addListener(adjustNavbar);
+        <script type="text/javascript" src="scripts/navbar.js">
         </script>
 
         <button onclick="w3_close()" class="w3-bar-item w3-large">
