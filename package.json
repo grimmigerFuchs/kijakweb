@@ -21,8 +21,5 @@
     "@fortawesome/fontawesome-free": "^5.15.2",
     "w3-css": "^4.1.0"
   },
-  "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-less": "^4.0.1"
-  }
+  "devDependencies": {}
 }
