@@ -22,5 +22,9 @@
     "less": "^4.1.1",
     "w3-css": "^4.1.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-coffee": "^3.0.3",
+    "gulp-less": "^4.0.1"
+  }
 }
