@@ -37,3 +37,13 @@ gulp.task("html", function() {
     }))
     .pipe(gulp.dest("./dist"));
 });
+
+gulp.task("build", gulp.parallel("less", "css", "js", "html"));
+
+gulp.task("watch", function() {
+    gulp.watch("./src/less/**/*.less", gulp.parallel("less"));
+    gulp.watch("./src/css/**/*.css", gulp.parallel("css"));
+    gulp.watch("./src/**/*.html", gulp.parallel("html"));
+});
+
+gulp.task("default", gulp.parallel("build", "watch"));
