@@ -30,12 +30,18 @@ gulp.task("js", function() {
 });
 
 gulp.task("pages", function() {
-  return gulp.src(["./src/**/*.html"])
+  return gulp.src(["./src/*.html"])
     .pipe(htmlmin({
       collapseWhitespace: true,
       removeComments: true
     }))
-    .pipe(gulp.dest("./dist"));
+    .pipe(gulp.dest("./dist")),
+    gulp.src(["./src/components/**/*.html"])
+      .pipe(htmlmin({
+        collapseWhitespace: true,
+        removeComments: true
+      }))
+      .pipe(gulp.dest("./dist/components"));
 });
 
 // meta
