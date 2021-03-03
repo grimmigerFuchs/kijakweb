@@ -12,7 +12,7 @@ var htmlmin = require("gulp-htmlmin");
 
 // builds
 gulp.task("less", function() {
-    return gulp.src("./src/less/**/*.less")
+    return gulp.src("./src/less/style.less")
         .pipe(less())
         .pipe(gulp.dest("./dist/css"));
 });
