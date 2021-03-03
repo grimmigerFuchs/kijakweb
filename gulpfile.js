@@ -8,16 +8,16 @@ var csso = require("gulp-csso");
 var minify = require("gulp-minify-css");
 
 gulp.task("less", function () {
-  return gulp.src("./less/style.less")
+  return gulp.src("./src/less/style.less")
     .pipe(less({
       paths: [ path.join(__dirname, "less", "includes") ]
     }))
-    .pipe(gulp.dest("./css"));
+    .pipe(gulp.dest("./src/css"));
 });
 
 gulp.task("css", function () {
-  return gulp.src("./css/style.css")
+  return gulp.src("./src/css/style.css")
     .pipe(autoprefixer())
     .pipe(csso())
-    .pipe(gulp.dest("./css"))
+    .pipe(gulp.dest("./src/css"))
 });
