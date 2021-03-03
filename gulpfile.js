@@ -29,7 +29,7 @@ gulp.task("js", function() {
     .pipe(gulp.dest("./dist/js"))
 });
 
-gulp.task("html", function() {
+gulp.task("pages", function() {
   return gulp.src(["./src/**/*.html"])
     .pipe(htmlmin({
       collapseWhitespace: true,
@@ -38,12 +38,12 @@ gulp.task("html", function() {
     .pipe(gulp.dest("./dist"));
 });
 
-gulp.task("build", gulp.parallel("less", "css", "js", "html"));
+gulp.task("build", gulp.parallel("less", "css", "js", "pages"));
 
 gulp.task("watch", function() {
     gulp.watch("./src/less/**/*.less", gulp.parallel("less"));
     gulp.watch("./src/css/**/*.css", gulp.parallel("css"));
-    gulp.watch("./src/**/*.html", gulp.parallel("html"));
+    gulp.watch("./src/**/*.html", gulp.parallel("pages"));
 });
 
 gulp.task("default", gulp.parallel("build", "watch"));
