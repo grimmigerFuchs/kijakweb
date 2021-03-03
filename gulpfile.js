@@ -8,6 +8,8 @@ var csso = require("gulp-csso");
 var minify = require("gulp-minify-css");
 var htmlmin = require("gulp-htmlmin");
 
+
+// builds
 gulp.task("less", function () {
   return gulp.src("./src/less/**/*.less")
     .pipe(less())
@@ -36,6 +38,7 @@ gulp.task("pages", function() {
     .pipe(gulp.dest("./dist"));
 });
 
+// meta
 gulp.task("build", gulp.parallel("less", "css", "js", "pages"));
 
 gulp.task("watch", function() {
@@ -44,4 +47,5 @@ gulp.task("watch", function() {
     gulp.watch("./src/**/*.html", gulp.parallel("pages"));
 });
 
+// default
 gulp.task("default", gulp.parallel("build", "watch"));
