@@ -16,8 +16,6 @@ function navbar_close() {
     document.getElementById("navbar").style.display         = "none";
     document.getElementById("open-nav").style.display       = "flex";
     document.getElementById("open-nav-icon").style.opacity  = "100%"
-    document.getElementById("main").style.width             = "100%";
-    document.getElementById("main").style.marginLeft        = "0";
 };
 
 /**
@@ -28,9 +26,7 @@ function adjustNavbar() {
     if (media.matches) {
         document.getElementById("navbar").style.width = "100%";
     } else {
-        document.getElementById("navbar").style.width       = strNavbarwidth;
-        document.getElementById("main").style.width         = strOppNavbarWidth;
-        document.getElementById("main").style.marginLeft    = strNavbarwidth;
+        document.getElementById("navbar").style.width = strNavbarwidth;
     }
 };
 
