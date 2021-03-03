@@ -55,11 +55,7 @@ gulp.task("pages", function() {
 gulp.task("build", gulp.parallel("less", "css", "coffee", "js", "pages"));
 
 gulp.task("watch", function() {
-    gulp.watch("./src/less/**/*.less", gulp.parallel("less"));
-    gulp.watch("./src/css/**/*.css", gulp.parallel("css"));
-    gulp.watch("./src/cofee/**/*.coffee", gulp.parallel("coffee"));
-    gulp.watch("./src/js/**/*.js", gulp.parallel("js"));
-    gulp.watch("./src/**/*.html", gulp.parallel("pages"));
+    gulp.watch("./src", gulp.parallel("build"))
 });
 
 // default
