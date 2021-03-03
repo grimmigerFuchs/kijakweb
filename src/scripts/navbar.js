@@ -18,6 +18,12 @@ function navbar_close() {
     document.getElementById("open-nav-icon").style.opacity  = "100%"
 };
 
+function close_nav_on_mobile() {
+    if (media.matches) {
+        navbar_close()
+    }
+}
+
 /**
  * Adjusts suitable navbar size
  * Is called whenever the navbar is opened or the screen size is changed from "mobile" to "desktop"
