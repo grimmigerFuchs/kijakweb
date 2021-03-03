@@ -21,19 +21,21 @@ gulp.task("css", function() {
     return gulp.src("./src/css/**/*.css")
         .pipe(autoprefixer())
         .pipe(csso())
-        .pipe(gulp.dest("./dist/css"))
+        .pipe(gulp.dest("./dist/css"));
 });
 
 gulp.task("coffee", function() {
     return gulp.src("./src/coffee/**/*.coffee")
-        .pipe(coffee({bare: true}))
+        .pipe(coffee({
+            bare: true
+        }))
         .pipe(gulp.dest("./dist/js"));
 });
 
 gulp.task("js", function() {
     return gulp.src("./src/js/**/*.js")
         .pipe(uglify())
-        .pipe(gulp.dest("./dist/js"))
+        .pipe(gulp.dest("./dist/js"));
 });
 
 gulp.task("pages", function() {
