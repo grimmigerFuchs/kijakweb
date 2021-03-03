@@ -10,9 +10,7 @@ var htmlmin = require("gulp-htmlmin");
 
 gulp.task("less", function () {
   return gulp.src("./src/less/**/*.less")
-    .pipe(less({
-      paths: [ path.join(__dirname, "less", "includes") ]
-    }))
+    .pipe(less())
     .pipe(gulp.dest("./dist/css"));
 });
 
