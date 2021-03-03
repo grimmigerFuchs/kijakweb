@@ -18,12 +18,12 @@
   },
   "homepage": "https://github.com/grimmigerFuchs/KIJAK-website#readme",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.2",
-    "less": "^4.1.1"
+    "@fortawesome/fontawesome-free": "^5.15.2"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-coffee": "^3.0.3",
-    "gulp-less": "^4.0.1"
+    "gulp-less": "^4.0.1",
+    "less": "^3.13.1"
   }
 }
