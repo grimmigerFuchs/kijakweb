@@ -1,15 +1,17 @@
-gulp = require "gulp"
-less = require "gulp-less"
-path = require "path"
-uglify = require "gulp-uglify"
-autoprefixer = require "gulp-autoprefixer"
-concat = require "gulp-concat"
-csso = require "gulp-csso"
-minify = require "gulp-minify-css"
-coffee = require "gulp-coffee"
-htmlmin = require "gulp-htmlmin"
-clean = require "gulp-clean"
-browserSync = (require "browser-sync").create()
+# gulpfile.coffee
+
+gulp            = require "gulp"
+less            = require "gulp-less"
+path            = require "path"
+uglify          = require "gulp-uglify"
+autoprefixer    = require "gulp-autoprefixer"
+concat          = require "gulp-concat"
+csso            = require "gulp-csso"
+minify          = require "gulp-minify-css"
+coffee          = require "gulp-coffee"
+htmlmin         = require "gulp-htmlmin"
+clean           = require "gulp-clean"
+browserSync     = (require "browser-sync").create()
 
 
 ###
