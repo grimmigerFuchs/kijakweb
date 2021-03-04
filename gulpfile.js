@@ -20,15 +20,13 @@ gulp.task("less", function() {
         .pipe(gulp.dest("./dist/css"));
 });
 
-// gulp.task("css", function() {
-//     return gulp.src("./src/css/**/*.css")
-//         .pipe(autoprefixer())
-//         .pipe(csso())
-//         .pipe(gulp.dest("./dist/css"));
-// });
+gulp.task("css", function() {
+    return gulp.src("./src/css/**/*.css")
+        .pipe(gulp.dest("./dist/css"));
+});
 
 gulp.task("minify-css", function() {
-    return gulp.src("./dist/css/**/*.css")
+    return gulp.src("./dist/css/*.css")
         .pipe(autoprefixer())
         .pipe(csso())
         .pipe(gulp.dest("./dist/css"));
@@ -42,11 +40,16 @@ gulp.task("coffee", function() {
         .pipe(gulp.dest("./dist/js"));
 });
 
-// gulp.task("js", function() {
-//     return gulp.src("./src/js/**/*.js")
-//         .pipe(uglify())
-//         .pipe(gulp.dest("./dist/js"));
-// });
+gulp.task("js", function() {
+    return gulp.src("./src/js/**/*.js")
+        .pipe(gulp.dest("./dist/js"));
+});
+
+gulp.task("minify-js", function() {
+    return gulp.src("./dist/js/*.js")
+        .pipe(uglify())
+        .pipe(gulp.dest("./dist/js"));
+});
 
 gulp.task("html", function() {
     return gulp.src(["./src/*.html"])
@@ -71,8 +74,13 @@ gulp.task("clean", function() {
         .pipe(clean());
 });
 
+gulp.task("minify", gulp.parallel("minify-css", "minify-js"));
+
 gulp.task("build", gulp.series(
-    "clean", gulp.parallel("less", "coffee", "html"), "minify-css"));
+    "clean",
+    gulp.parallel("less", "css", "coffee", "js", "html"),
+    "minify"
+));
 
 gulp.task("watch", function() {
     gulp.watch("./src", gulp.parallel("build"));
