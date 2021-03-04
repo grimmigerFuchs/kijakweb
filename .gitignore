@@ -114,3 +114,6 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# gulpfile (replaced with gulpfile.coffe)
+gulpfile.js
