@@ -117,12 +117,13 @@ gulp.task("watch", ->
 gulp.task("browser-sync", ->
     browserSync.init({
         server: {
+            watch: true,
             baseDir: "./dist"
         }
     })
 )
 
 # Default
-gulp.task("default", gulp.parallel("build", "browser-sync", "watch"))
+gulp.task("default", gulp.parallel("build", "watch"))
 
 # ----------
