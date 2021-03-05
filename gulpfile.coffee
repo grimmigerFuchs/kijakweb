@@ -20,45 +20,39 @@ TASKS
 # ----------
 
 # Stylesheets
-gulp.task("less", ->
+gulp.task "less", ->
     gulp.src("./src/less/**/*.less")
     .pipe(less())
     .pipe(gulp.dest("./dist/css"))
-)
 
-gulp.task("css", ->
+gulp.task "css", ->
     gulp.src("./src/css/**/*.css")
     .pipe(gulp.dest("./dist/css"))
-)
 
-gulp.task("minify-css", ->
+gulp.task "minify-css", ->
     gulp.src("./dist/css/*.css")
     .pipe(autoprefixer())
     .pipe(csso())
     .pipe(gulp.dest("./dist/css"))
-)
 
 # Scripts
-gulp.task("coffee", ->
+gulp.task "coffee", ->
     gulp.src("./dist/coffee/**/*.coffee")
     .pipe(coffee({bare: true}))
     .pipe(gulp.dest("./dist/js"))
-)
 
-gulp.task("js", ->
+gulp.task "js", ->
     gulp.src("./dist/js/**/*.js")
     .pipe(uglify())
     .pipe(gulp.dest("./dist/js"))
-)
 
-gulp.task("minify-js", ->
+gulp.task "minify-js", ->
     gulp.src("./dist/js/*.js")
     .pipe(uglify())
     .pipe(gulp.dest("./dist/js"))
-)
 
 # HTML
-gulp.task("html", ->
+gulp.task "html", ->
     # TODO: Remove return()
     return (
         gulp.src("./dist/*.html")
@@ -67,9 +61,8 @@ gulp.task("html", ->
         gulp.src("./dist/components/**/*.html")
         .pipe(gulp.dest("./dist/components"))
     )
-)
 
-gulp.task("minify-html", ->
+gulp.task "minify-html", ->
     return (
         gulp.src("./dist/*.html")
         .pipe(htmlmin({
@@ -85,7 +78,6 @@ gulp.task("minify-html", ->
             }))
         .pipe(gulp.dest("./dist/components"))
     )
-)
 
 # ----------
 
@@ -94,22 +86,19 @@ META
 ###
 # ----------
 
-gulp.task("clean", ->
+gulp.task "clean", ->
     gulp.src("./dist/*", {allowEmpty: true})
     .pipe(clean())
-)
 
-gulp.task("copy", ->
+gulp.task "copy", ->
     gulp.src("./src/**/*")
     .pipe(gulp.dest("./dist"))
-)
 
-gulp.task("minify", gulp.parallel(
+gulp.task "minify", gulp.parallel(
     "minify-css", "minify-js", "minify-html"
     )
-)
 
-gulp.task("build", gulp.series(
+gulp.task "build", gulp.series(
     "clean",
     "copy",
     gulp.parallel(
@@ -119,23 +108,20 @@ gulp.task("build", gulp.series(
     ),
     "minify"
     )
-)
 
-gulp.task("watch", ->
+gulp.task "watch", ->
     gulp.watch("./src", gulp.parallel("build"))
-)
 
 # Browser Sync
-gulp.task("browser-sync", ->
+gulp.task "browser-sync", ->
     browserSync.init({
         server: {
             watch: true,
             baseDir: "./dist"
         }
     })
-)
 
 # Default
-gulp.task("default", gulp.parallel("build", "watch"))
+gulp.task "default", gulp.parallel("build", "watch")
 
 # ----------
