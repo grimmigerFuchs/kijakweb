@@ -1,17 +1,17 @@
 # gulpfile.coffee
 
-gulp            = require "gulp"
-less            = require "gulp-less"
-path            = require "path"
-uglify          = require "gulp-uglify"
-autoprefixer    = require "gulp-autoprefixer"
-concat          = require "gulp-concat"
-csso            = require "gulp-csso"
-minify          = require "gulp-minify-css"
-coffee          = require "gulp-coffee"
-htmlmin         = require "gulp-htmlmin"
-clean           = require "gulp-clean"
-browserSync     = (require "browser-sync").create()
+gulp = require "gulp"
+less = require "gulp-less"
+path = require "path"
+uglify = require "gulp-uglify"
+autoprefixer = require "gulp-autoprefixer"
+concat = require "gulp-concat"
+csso = require "gulp-csso"
+minify = require "gulp-minify-css"
+coffee = require "gulp-coffee"
+htmlmin = require "gulp-htmlmin"
+clean = require "gulp-clean"
+browserSync = (require "browser-sync").create()
 
 
 ###
@@ -40,13 +40,13 @@ gulp.task("minify-css", ->
 
 # Scripts
 gulp.task("coffee", ->
-    gulp.src("./src/coffee/**/*.coffee")
+    gulp.src("./dist/coffee/**/*.coffee")
     .pipe(coffee({bare: true}))
     .pipe(gulp.dest("./dist/js"))
 )
 
 gulp.task("js", ->
-    gulp.src("./src/js/**/*.js")
+    gulp.src("./dist/js/**/*.js")
     .pipe(uglify())
     .pipe(gulp.dest("./dist/js"))
 )
@@ -61,10 +61,10 @@ gulp.task("minify-js", ->
 gulp.task("html", ->
     # TODO: Remove return()
     return (
-        gulp.src("./src/*.html")
+        gulp.src("./dist/*.html")
         .pipe(gulp.dest("./dist"))
 
-        gulp.src("./src/components/**/*.html")
+        gulp.src("./dist/components/**/*.html")
         .pipe(gulp.dest("./dist/components"))
     )
 )
@@ -94,18 +94,30 @@ META
 ###
 # ----------
 
-# Groups
 gulp.task("clean", ->
-    gulp.src("./dist/**/*", {read: false})
+    gulp.src("./dist/*", {allowEmpty: true})
     .pipe(clean())
 )
 
-gulp.task("minify", gulp.parallel("minify-css", "minify-js", "minify-html"))
+gulp.task("copy", ->
+    gulp.src("./src/**/*")
+    .pipe(gulp.dest("./dist"))
+)
+
+gulp.task("minify", gulp.parallel(
+    "minify-css", "minify-js", "minify-html"
+    )
+)
 
 gulp.task("build", gulp.series(
-        "clean"
-        gulp.parallel("less", "css", "coffee", "js", "html")
-        "minify"
+    "clean",
+    "copy",
+    gulp.parallel(
+        gulp.parallel("coffee", "js"),
+        gulp.series("less", "css"),
+        "html"
+    ),
+    "minify"
     )
 )
 
