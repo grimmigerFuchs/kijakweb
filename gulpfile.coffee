@@ -41,11 +41,6 @@ gulp.task "coffee", ->
     .pipe(coffee({bare: true}))
     .pipe(gulp.dest("./dist/js"))
 
-gulp.task "js", ->
-    gulp.src("./dist/js/**/*.js")
-    .pipe(uglify())
-    .pipe(gulp.dest("./dist/js"))
-
 gulp.task "minify-js", ->
     gulp.src("./dist/js/*.js")
     .pipe(uglify())
@@ -102,7 +97,7 @@ gulp.task "build", gulp.series(
     "clean",
     "copy",
     gulp.parallel(
-        gulp.parallel("coffee", "js"),
+        "coffee"
         gulp.series("less", "css"),
         "html"
     ),
