@@ -48,7 +48,7 @@ button {
 }
 
 hr {
-    border-top: 3px solid #efefef !important;
+    border-top: 3px solid @gray !important;
 }
 
 ul {
@@ -74,7 +74,7 @@ li {
     backdrop-filter: blur(4px);
 
     &:hover {
-        background-color: fade(#efefef, 90%);
+        background-color: fade(@gray, 90%);
         backdrop-filter: blur(5px);
     }
 
@@ -88,7 +88,7 @@ li {
 #navbar {
     display: none;
     border-style: solid;
-    border-color: #efefef;
+    border-color: @gray;
     box-shadow: 2px 0 25px fade(@dark, 45%);
     position: fixed;
     background-color: @dark !important;
@@ -101,7 +101,7 @@ li {
         }
 
         &:hover {
-            background-color: #efefef;
+            background-color: @gray;
         }
     }
 
