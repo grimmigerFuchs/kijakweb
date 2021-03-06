@@ -70,16 +70,18 @@ li {
 
 #open-nav-parent {
     position: fixed;
-    background-color: white;
+    background-color: fade(white, 90%);
+    backdrop-filter: blur(4px);
 
     &:hover {
-        background-color: #efefef;
+        background-color: fade(#efefef, 90%);
+        backdrop-filter: blur(5px);
     }
 
     #open-nav {
         display: flex;
-        background-color: Transparent !important;
         color: black;
+        background-color: Transparent !important;
     }
 }
 
@@ -147,4 +149,5 @@ li {
     :first-child {
         margin-top: 1.5em;
     }
+    height: 900vh;
 }
