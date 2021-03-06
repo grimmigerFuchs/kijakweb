@@ -1,5 +1,4 @@
 # gulpfile.coffee
-# TODO: Update src/ to dist/
 
 gulp = require "gulp"
 less = require "gulp-less"
