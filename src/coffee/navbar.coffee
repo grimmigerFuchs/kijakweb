@@ -1,4 +1,5 @@
 # navbar.coffee
+# TODO: rename vars
 
 navbarOpen = ->
     adjustNavbar()
