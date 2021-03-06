@@ -1,4 +1,5 @@
 # gulpfile.coffee
+# TODO: Update src/ to dist/
 
 gulp = require "gulp"
 less = require "gulp-less"
@@ -21,12 +22,8 @@ TASKS
 
 # Stylesheets
 gulp.task "less", ->
-    gulp.src("./src/less/**/*.less")
+    gulp.src("./dist/less/**/*.less")
     .pipe(less())
-    .pipe(gulp.dest("./dist/css"))
-
-gulp.task "css", ->
-    gulp.src("./src/css/**/*.css")
     .pipe(gulp.dest("./dist/css"))
 
 gulp.task "minify-css", ->
@@ -89,18 +86,12 @@ gulp.task "copy", ->
     gulp.src("./src/**/*")
     .pipe(gulp.dest("./dist"))
 
-gulp.task "minify", gulp.parallel(
-    "minify-css", "minify-js", "minify-html"
-    )
+gulp.task "minify", gulp.parallel("minify-css", "minify-js", "minify-html")
 
 gulp.task "build", gulp.series(
     "clean",
     "copy",
-    gulp.parallel(
-        "coffee"
-        gulp.series("less", "css"),
-        "html"
-    ),
+    gulp.parallel("coffee", "less", "html"),
     "minify"
     )
 
