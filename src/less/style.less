@@ -1,5 +1,8 @@
-// styles.less
+// style.less
 @import "variables.less";
+
+// FIXME: Dark and light theme ui
+// TODO: "Externify" element specifics into "specifics.less"
 
 body,
 html {
@@ -48,7 +51,7 @@ button {
 }
 
 hr {
-    border-top: 3px solid @gray !important;
+    border-top: 3px solid @gray  !important;
 }
 
 ul {
@@ -89,7 +92,7 @@ li {
     border-color: @gray;
     box-shadow: 2px 0 25px fade(@dark, 45%);
     position: fixed;
-    background-color: @dark !important;
+    background-color: @dark  !important;
 
     #close-nav {
         background-color: white;
@@ -116,7 +119,7 @@ li {
 
     a:hover {
         color: white !important;
-        background-color: @middle !important;
+        background-color: @middle  !important;
     }
 }
 
@@ -142,7 +145,6 @@ li {
 
 .section {
     width: 93vw !important;
-    min-height: 100vh;
     margin: auto;
 
     :first-child {
