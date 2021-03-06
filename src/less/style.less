@@ -1,15 +1,15 @@
 // styles.less
 @import "standards.less";
-// TODO: font assignment
+
 body,
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
-    color: white;
-}
+    color: black;
 
-.gf {
-    font-family: "Noto Sans JP", sans-serif;
+    * {
+        font-family: "Noto Sans JP", sans-serif !important;
+    }
 }
 
 h1 {
@@ -17,25 +17,26 @@ h1 {
     letter-spacing: @spacing;
 }
 
-h2 {
+h2,
+h3 {
     font-size: 1.5em !important;
 }
 
 h3 {
-    font-size: 1.5em !important;
     letter-spacing: 0.05em;
-    font-family: "Noto Sans JP", sans-serif !important;
+    text-transform: uppercase !important;
 }
 
 h4 {
     font-size: 1.18em !important;
-    font-family: "Noto Sans JP", sans-serif !important;
     font-weight: 600 !important;
 }
 
 p {
     margin-block-start: 1.5em;
     margin-block-end: 1.5em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
 }
 
 a {
@@ -50,12 +51,21 @@ hr {
     border-top: 3px solid #efefef !important;
 }
 
+ul {
+    margin-top: 1.5em !important;
+    margin-bottom: 1.5em !important;
+}
+
+li {
+    margin: 0 !important;
+
+}
+
 .block {
     display: block;
     width: 100vw !important;
     border: none;
     outline: none;
-    text-align: left;
 }
 
 #open-nav-parent {
@@ -69,27 +79,39 @@ hr {
     #open-nav {
         display: flex;
         background-color: Transparent !important;
+        color: black;
     }
 }
 
 #navbar {
-    // border-radius: 2vw;
+    display: none;
     border-style: solid;
     border-color: #efefef;
-    // box-shadow: 5px 0 25px fade(@dark, 45%);
+    box-shadow: 2px 0 25px fade(@dark, 45%);
     position: fixed;
     background-color: @dark !important;
 
     #close-nav {
         background-color: white;
 
+        i {
+            margin-left: 0.5em;
+        }
+
         &:hover {
             background-color: #efefef;
         }
     }
 
-    #nav-title:hover {
-        background-color: Transparent !important;
+    #nav-title {
+        #nav-title-header {
+            font-weight: bold;
+            text-transform: none !important;
+        }
+
+        &:hover {
+            background-color: Transparent !important;
+        }
     }
 
     a:hover {
@@ -102,6 +124,7 @@ hr {
     background-color: @dark;
     text-align: center;
     padding-bottom: 2vh;
+    color: white;
 
     #heading-content {
         margin: 0;
@@ -119,6 +142,9 @@ hr {
 
 .section {
     width: 93vw !important;
-    color: black;
-    margin: 1.5em auto auto auto;
+    margin: auto;
+
+    :first-child {
+        margin-top: 1.5em;
+    }
 }

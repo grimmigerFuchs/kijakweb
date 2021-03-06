@@ -23,25 +23,26 @@
 
 <body>
     <!-- NAVBAR -->
-    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-black" id="navbar" style="display: none">
-        <!-- open / close navbar -->
+    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-black" id="navbar">
+        <!-- navbar functions -->
         <script type="text/javascript" src="js/navbar.js"></script>
 
         <button onclick="navbarClose()" class="w3-bar-item w3-large" id="close-nav">
-            <i class="fas fa-times fa-fw" style="margin-left: .5"></i>
+            <i class="fas fa-times fa-fw"></i>
         </button>
-        <a class="w3-button w3-mobile gf" id="nav-title" href="#">
-            <h3><b>Inhalt</b></h3>
+        <a class="w3-button w3-mobile" id="nav-title" href="#">
+            <h3 id="nav-title-header">Inhalt</h3>
         </a>
+
         <!-- navbar items -->
-        <a class="w3-bar-item w3-button w3-mobile gf" onclick="closeNavOnMobile()" href="#hochbegabung"><i class="fas fa-graduation-cap fa-fw"></i> Hochbegabung</a>
-        <a class="w3-bar-item w3-button w3-mobile gf" onclick="closeNavOnMobile()" href="#"><i class="fas fa-user-friends   fa-fw"></i> Gemeinsam</a>
-        <a class="w3-bar-item w3-button w3-mobile gf" onclick="closeNavOnMobile()" href="#"><i class="fas fa-map-signs      fa-fw"></i> Kursprogramme</a>
-        <a class="w3-bar-item w3-button w3-mobile gf" onclick="closeNavOnMobile()" href="#"><i class="fas fa-receipt        fa-fw"></i> Förderverein</a>
-        <a class="w3-bar-item w3-button w3-mobile gf" onclick="closeNavOnMobile()" href="#"><i class="fas fa-address-card   fa-fw"></i> Mitgliedschaft</a>
-        <a class="w3-bar-item w3-button w3-mobile gf" onclick="closeNavOnMobile()" href="#"><i class="fas fa-hands-helping  fa-fw"></i> Partner</a>
-        <a class="w3-bar-item w3-button w3-mobile gf" onclick="closeNavOnMobile()" href="#"><i class="fas fa-at             fa-fw"></i> Kontakt / Impressum</a>
-        <a class="w3-bar-item w3-button w3-mobile gf" onclick="closeNavOnMobile()" href="#"><i class="fas fa-database       fa-fw"></i> Datenschutz / Haftung</a>
+        <a class="w3-bar-item w3-button w3-mobile" onclick="closeNavOnMobile()" href="#hochbegabung"><i class="fas fa-graduation-cap fa-fw"></i> Hochbegabung</a>
+        <a class="w3-bar-item w3-button w3-mobile" onclick="closeNavOnMobile()" href="#"><i class="fas fa-user-friends   fa-fw"></i> Gemeinsam</a>
+        <a class="w3-bar-item w3-button w3-mobile" onclick="closeNavOnMobile()" href="#"><i class="fas fa-map-signs      fa-fw"></i> Kursprogramme</a>
+        <a class="w3-bar-item w3-button w3-mobile" onclick="closeNavOnMobile()" href="#"><i class="fas fa-receipt        fa-fw"></i> Förderverein</a>
+        <a class="w3-bar-item w3-button w3-mobile" onclick="closeNavOnMobile()" href="#"><i class="fas fa-address-card   fa-fw"></i> Mitgliedschaft</a>
+        <a class="w3-bar-item w3-button w3-mobile" onclick="closeNavOnMobile()" href="#"><i class="fas fa-hands-helping  fa-fw"></i> Partner</a>
+        <a class="w3-bar-item w3-button w3-mobile" onclick="closeNavOnMobile()" href="#"><i class="fas fa-at             fa-fw"></i> Kontakt / Impressum</a>
+        <a class="w3-bar-item w3-button w3-mobile" onclick="closeNavOnMobile()" href="#"><i class="fas fa-database       fa-fw"></i> Datenschutz / Haftung</a>
     </div>
 
     <!-- CONTENT -->
@@ -57,37 +58,36 @@
         <div class="w3-container" id="heading">
             <div id="heading-content">
                 <!-- TODO: Add colors to "KIJAK" -->
-                <h1 class="gf">KIJAK</h1>
-                <h2 class="gf">Kinder- und Jugendakademie Schwarzwald-Baar</h2>
+                <h1>KIJAK</h1>
+                <h2>Kinder- und Jugendakademie Schwarzwald-Baar</h2>
             </div>
         </div>
 
         <!-- Hochbegabung -->
         <section class="w3-container section" id="hochbegabung">
-            <h3 class="gf">Hochbegabt?! - Wir fördern ihr Kind!</h3>
+            <h3>Hochbegabt?! - Wir fördern ihr Kind!</h3>
             <hr>
-            <h4 class="gf">Ist Ihr Kind überraschend anders?</h4>
+            <h4>Ist Ihr Kind überraschend anders?</h4>
             <p>Verblüfft Sie Ihr Kind oft durch originelle Ideen,
                 verfügt es über ein herausragend gutes Gedächtnis und einen für das Alter ungewöhnlichen Wortschatz?<br>
                 Dann können dies Anzeichen für eine Hochbegabung sein.
             </p>
             <p>
-                <b>Charakteristika für Hochbegabung sind:</b>
-            <ul class="w3-ul">
-                <li>überdurchschnittliche Denkleistungen</li>
-                <li>auffallende Gedächtnisleistungen</li>
-                <li>weitreichende Analysefähigkeiten</li>
-                <li>ausgeprägtes Abstraktionsvermögen</li>
-                <li>komplexe sprachliche Fähigkeiten</li>
-                <li>außergewöhnliche Fantasie und Kreativität</li>
-                <li>besondere Sensibilität</li>
-            </ul>
+                <h4>Charakteristika für Hochbegabung sind:</h4>
+                <ul class="w3-ul">
+                    <li>überdurchschnittliche Denkleistungen</li>
+                    <li>auffallende Gedächtnisleistungen</li>
+                    <li>weitreichende Analysefähigkeiten</li>
+                    <li>ausgeprägtes Abstraktionsvermögen</li>
+                    <li>komplexe sprachliche Fähigkeiten</li>
+                    <li>außergewöhnliche Fantasie und Kreativität</li>
+                    <li>besondere Sensibilität</li>
+                </ul>
             </p>
             <p>
                 Ist ihr Kind hochbegabt, dann braucht es eine Förderung, die seinen Bedürfnissen gerecht wird.<br>
                 Denn nur so kann es sich harmonisch und glücklich entwickeln.<br>
-                Vorteilhaft ist es für Ihr Kind,
-                wenn Sie ihm den Kontakt zu anderen hochbegabten Kindern ermöglichen - dafür ist die Kinder- und Jugendakademie da.
+                Vorteilhaft ist es für Ihr Kind, wenn Sie ihm den Kontakt zu anderen hochbegabten Kindern ermöglichen - dafür ist die Kinder- und Jugendakademie da.
             </p>
         </section>
     </div>
