@@ -45,7 +45,7 @@ gulp.task "minify-js", ->
 # HTML
 gulp.task "html", ->
     # TODO: Remove return()
-    return (
+    (
         gulp.src("./dist/*.html")
         .pipe(gulp.dest("./dist"))
 
