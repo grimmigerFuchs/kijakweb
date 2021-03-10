@@ -24,10 +24,12 @@ adjustNavbar = ->
         document.getElementById("navbar").style.width = "100%"
     else
         document.getElementById("navbar").style.width = strNavbarwidth
-
+        
+# Navbar style
 navbarWidth = 25
 strNavbarwidth = "#{navbarWidth}%"
 
+# Media query
 media = window.matchMedia("(max-width: 1024px)")
 media.addListener(->
     adjustNavbar()
