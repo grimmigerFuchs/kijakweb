@@ -1,17 +1,16 @@
 # navbar.coffee
 # TODO: rename vars
 
+# Functions ------------------------------ #
+
 # Opens navbar
 navbarOpen = ->
     adjustNavbar()
-    document.getElementById("navbar").style.display = "block"
-    document.getElementById("open-nav-icon").style.opacity = "0"
+    navbar.style.display = "block"
 
 # Closes navbar
 navbarClose = ->
-    document.getElementById("navbar").style.display = "none"
-    document.getElementById("open-nav").style.display = "flex"
-    document.getElementById("open-nav-icon").style.opacity = "100%"
+    navbar.style.display = "none"
 
 # Close navbar if on mobile
 closeNavOnMobile = ->
@@ -21,10 +20,17 @@ closeNavOnMobile = ->
 # Adjusts navbar sizing
 adjustNavbar = ->
     if media.matches
-        document.getElementById("navbar").style.width = "100%"
+        navbar.style.width = "100%"
     else
-        document.getElementById("navbar").style.width = strNavbarwidth
-        
+        navbar.style.width = strNavbarwidth
+
+# ---------------------------------------- #
+
+# Variables ------------------------------ #
+
+# Elements
+navbar = document.getElementById("navbar")
+    
 # Navbar style
 navbarWidth = 25
 strNavbarwidth = "#{navbarWidth}%"
@@ -35,3 +41,5 @@ media.addListener(->
     adjustNavbar()
     navbarClose()
 )
+
+# ---------------------------------------- #
