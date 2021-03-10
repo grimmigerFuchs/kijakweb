@@ -28,10 +28,8 @@ adjustNavbar = ->
 navbarWidth = 25
 strNavbarwidth = "#{navbarWidth}%"
 
-# Media query listener
-listener = ->
-        adjustNavbar()
-        navbarClose()
-
 media = window.matchMedia("(max-width: 1024px)")
-media.addListener(listener)
+media.addListener(->
+    adjustNavbar()
+    navbarClose()
+)
