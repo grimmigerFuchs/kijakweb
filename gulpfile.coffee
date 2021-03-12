@@ -108,7 +108,7 @@ gulp.task "browser-sync", ->
         }
     })
 
-# Default tasks
+# Default task
 gulp.task "default", gulp.parallel("build", "watch")
 
 # ---------------------------------------- #
