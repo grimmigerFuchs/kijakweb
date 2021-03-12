@@ -11,7 +11,7 @@ minify = require "gulp-minify-css"
 coffee = require "gulp-coffee"
 htmlmin = require "gulp-htmlmin"
 clean = require "gulp-clean"
-browserSync = (require "browser-sync").create()
+merge = require "merge-stream"
 
 # File Specificic Tasks ------------------ #
 
@@ -37,7 +37,9 @@ gulp.task "minify-css", ->
 # Compiles CoffeeScript into JavaScript
 gulp.task "coffee", ->
     gulp.src("./dist/coffee/**/*.coffee")
-    .pipe(coffee({bare: true}))
+    .pipe(coffee({
+        bare: true
+    }))
     .pipe(gulp.dest("./dist/js"))
 
 # Minifies JavaScript
@@ -52,21 +54,19 @@ gulp.task "minify-js", ->
 
 # Minifies HTML
 gulp.task "minify-html", ->
-    return (
-        gulp.src("./dist/*.html")
-        .pipe(htmlmin({
-            collapseWhitespace: true,
-            removeComments: true
-            }))
-        .pipe(gulp.dest("./dist"))
-
-        gulp.src("./dist/components/*.html")
-        .pipe(htmlmin({
-            collapseWhitespace: true,
-            removeComments: true
-            }))
-        .pipe(gulp.dest("./dist/components"))
-    )
+    root        = gulp.src("./dist/*.html")
+                    .pipe(htmlmin({
+                        collapseWhitespace: true,
+                        removeComments: true
+                    }))
+                    .pipe(gulp.dest("./dist"))
+    components  = gulp.src("./dist/components/*.html")
+                    .pipe(htmlmin({
+                        collapseWhitespace: true,
+                        removeComments: true
+                    }))
+                    .pipe(gulp.dest("./dist/components"))
+    return merge(root, components)
 
 # -------------------- #
 
@@ -76,7 +76,9 @@ gulp.task "minify-html", ->
 
 # Cleans content of dist/
 gulp.task "clean", ->
-    gulp.src("./dist/*", {allowEmpty: true})
+    gulp.src("./dist/*", {
+        allowEmpty: true
+    })
     .pipe(clean())
 
 # Copies all files from src/ into dist/
@@ -85,7 +87,11 @@ gulp.task "copy", ->
     .pipe(gulp.dest("./dist"))
 
 # Minifies everything
-gulp.task "minify", gulp.parallel("minify-css", "minify-js", "minify-html")
+gulp.task "minify", gulp.parallel(
+    "minify-css",
+    "minify-js",
+    "minify-html"
+    )
 
 # Clean build
 gulp.task "build", gulp.series(
@@ -99,16 +105,10 @@ gulp.task "build", gulp.series(
 gulp.task "watch", ->
     gulp.watch("./src", gulp.parallel("build"))
 
-# Browser sync
-gulp.task "browser-sync", ->
-    browserSync.init({
-        server: {
-            watch: true,
-            baseDir: "./dist"
-        }
-    })
-
 # Default task
-gulp.task "default", gulp.parallel("build", "watch")
+gulp.task "default", gulp.parallel(
+    "build",
+    "watch"
+    )
 
 # ---------------------------------------- #
