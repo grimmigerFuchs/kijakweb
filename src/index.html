@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="de-DE" dir="ltr">
 <!-- TODO: Aria labels-->
+<!-- TODO: Copy doc files -->
 
 <head>
     <!-- META -->
@@ -36,8 +37,13 @@
             <i class="fas fa-times fa-fw"></i>
         </button>
         <a class="w3-button w3-mobile" id="nav-title" href="#">
-            <h3 id="nav-title-header">Inhalt</h3>
-        </a>
+            <h3 id="nav-title-header">Inhalt</h3>Planspiele und Wettbewerbe
+            Technik, Konstruieren, Automatisieren
+            Präsentieren
+            Mathematik und Informatik
+            Naturwissenschaften
+            Komplexe Spiele und Sportarten
+            ...und in vielen weiteren Themengebieten.
 
         <!-- navbar items -->
         <a class="w3-bar-item w3-button w3-mobile" onclick="closeNavOnMobile()" href="#hochbegabung"><i
@@ -52,9 +58,9 @@
                 class="fas fa-address-card fa-fw"></i> Mitgliedschaft</a>
         <a class="w3-bar-item w3-button w3-mobile" onclick="closeNavOnMobile()" href="#partner"><i
                 class="fas fa-hands-helping fa-fw"></i> Partner</a>
-        <a class="w3-bar-item w3-button w3-mobile" onclick="closeNavOnMobile()" href="#"><i class="fas fa-at fa-fw"></i>
+        <a class="w3-bar-item w3-button w3-mobile" onclick="closeNavOnMobile()" href="#kontakt-impressum"><i class="fas fa-at fa-fw"></i>
             Kontakt / Impressum</a>
-        <a class="w3-bar-item w3-button w3-mobile" onclick="closeNavOnMobile()" href="#"><i
+        <a class="w3-bar-item w3-button w3-mobile" onclick="closeNavOnMobile()" href="#datenschutz-haftung"><i
                 class="fas fa-database fa-fw"></i> Datenschutz / Haftung</a>
     </div>
 
@@ -264,8 +270,109 @@
                     </a>
                 </div>
             </div>
-            </p>
         </section>
+
+        <!-- Kontakt & Impressum - Datenschutz & Haftungsausschluss -->
+        <div id="legalities">
+            <div id="kontakt-impressum">
+                <!-- Kontakt -->
+                <section class="w3-container" id="kontakt">
+                    <h3>Kontakt</h3>
+                    <hr>
+                    <h4>Neugierig geworden?<br>
+                        Treten Sie mit uns in Kontakt!
+                    </h4>
+
+                    <p>
+                        <h5>Geschäftsführung Kinder- und Jugendakademie:</h5>
+                        StD. a.D. Karl-Heinz Suske<br>
+                        Konradin-Kreutzer-Weg 3<br>
+                        78073 Bad Dürrheim<br>
+                        Tel. 07726 / 929603<br>
+                        su -AT- feintechnikschule.de<br>
+                    </p>
+                    <p>
+                        <h5>Vorsitzender KIJAK-Förderverein:</h5>
+                        Prof. Dr. Dirk Koschützki<br>
+                        Tel. 07723 / 5059856<br>
+                        info -AT- kijak-foerderverein.de<br>
+                    </p>
+                    <p>
+                        <h5>Postadresse KIJAK Förderverein:</h5>
+                        Sibylle Koch<br>
+                        Villinger Str. 43a<br>
+                        78166 Donaueschingen<br>
+                    </p>
+                    <p>
+                        Förderverein Kinder- und Jugendakademie Schwarzwald-Baar e. V.<br>
+                        Villinger Str. 43a<br>
+                        78166 Donaueschingen<br>
+                        Tel. 0771 / 5040<br>
+                        info -AT- KIJAK-foerderverein.de<br>
+                    </p>
+                </section>
+
+                <!-- Impressum -->
+                <section class="w3-container" id="impressum">
+                    <h3>Impressum</h3>
+                    <hr>
+                    <h4>Ohne rechtliches geht es nicht...</h4>
+
+                    <p>
+                        <h5>Vertretungsberechtigter Vorstand:</h5>
+                        Prof. Dr. Dirk Koschützki<br>
+                        Juliane Schartel<br>
+                        erreichbar über die unten genannte Anschrift<br>
+                    </p>
+
+                    <p>
+                        <h5>Registergericht:</h5>
+                        Amtsgericht Freiburg
+                        <br><br>
+                        <h5>Registriernummer:</h5>
+                        VR 601329
+                    </p>
+                </section>
+            </div>
+
+            <!-- Datenschutz & Haftungsausschluss -->
+            <div id="datenschutz-haftung">
+                <!-- Datenschutz -->
+                <section class="w3-container" id="datenschutz">
+                    <h3>Datenschutz</h3>
+                    <hr>
+                    <h4>Noch mehr rechtliches...</h4>
+
+                    <p>
+                        Version 2.0.0 vom 15. April 2018
+                    </p>
+                    <p>
+                        Unsere Hinweise zum Datenschutz finden Sie auf
+                        <a href="https://www.kijak-foerderverein.de/Kijak_DSErklaerung_20180415.html">dieser Seite</a>.
+                    </p>
+                </section>
+
+                <!-- Haftungsausschluss -->
+                <section class="w3-container" id="haftungsausschluss">
+                    <h3>Haftungsausschluss</h3>
+                    <hr>
+                    <h4>Noch mehr rechtliches...</h4>
+    
+                    <p id="haftung-text">
+                        Der Inhalt dieser Seiten wurde sorgfältig bearbeitet und überprüft.
+                        Die Kinder- und Jugendakademie Schwarzwald-Baar übernimmt jedoch keine Gewähr für die Aktualität,
+                        Richtigkeit, Vollständigkeit oder Qualität der bereitgestellten Informationen.
+                        Haftungsansprüche gegen die Kinder- und Jugendakademie Schwarzwald-Baar,
+                        die sich auf Schäden materieller oder ideeller Art beziehen,
+                        welche durch die Nutzung oder Nichtnutzung der dargebotenen Informationen oder durch fehlerhafte und unvollständige Informationen verursacht wurden,
+                        sind grundsätzlich ausgeschlossen, sofern seitens der Kinder- und Jugendakademie Schwarzwald-Baar kein nachweislich vorsätzliches oder grob fahrlässiges Verschulden vorliegt.
+                        Die Kinder- und Jugendakademie Schwarzwald-Baar behält sich ausdrücklich das Recht vor,
+                        Teile der Seiten oder das gesamte Angebot ohne vorherige Ankündigung zu verändern, zu ergänzen,
+                        zu löschen oder die Veröffentlichung einzustellen.
+                    </p>
+                </section>
+            </div>
+        </div>
     </div>
 </body>
 
